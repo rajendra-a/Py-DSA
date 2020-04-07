@@ -11,6 +11,11 @@
 # peek - Returns the top element of the stack
 # size - Returns the number of items in stack
 
+class Empty(Exception):
+    """Error attempting to access an element from an empty container"""
+    pass
+    
+
 class Stack:
     def __init__(self):
         self.items = []
@@ -22,12 +27,18 @@ class Stack:
         self.items.append(item)
     
     def pop(self):
+        if self.is_empty():
+            raise Empty("stack is empty")
         return self.items.pop()
     
     def peek(self):
+        if self.is_empty():
+            raise Empty("stack is empty")
         return self.items[len(self.items)-1]
     
     def size(self):
+        if self.is_empty():
+            raise Empty("stack is empty")
         return len(self.items)
 
 
