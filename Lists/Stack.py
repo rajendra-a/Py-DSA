@@ -17,26 +17,36 @@ class Empty(Exception):
     
 
 class Stack:
+    """LiFO stack implementation using python list as underlying storage"""
+
     def __init__(self):
+        """Crate an empty stack"""
         self.items = []
     
     def is_empty(self):
         return self.items == []
     
     def push(self, item):
-        self.items.append(item)
+        """ Add element to the top of the stack"""
+        self.items.append(item) # new item stored at the end of the list
     
     def pop(self):
+        """ Remove and return element from the top of the stack"""
+        """Raise Empty exception if the stack is empty"""
         if self.is_empty():
             raise Empty("stack is empty")
-        return self.items.pop()
+        return self.items.pop() # remove last item from the list
     
     def peek(self):
+        """Return the top element of the stack"""
+        """Raise Empty exception if the stack is empty"""
         if self.is_empty():
             raise Empty("stack is empty")
-        return self.items[len(self.items)-1]
+        return self.items[-1] # the last item in the list 
     
     def size(self):
+        """Return the number of elements in the stack"""
+        """ Raise the Empty exception is the stack is empty"""
         if self.is_empty():
             raise Empty("stack is empty")
         return len(self.items)
