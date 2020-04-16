@@ -21,7 +21,7 @@ class LinkedList(object):
         else:
             self.head = new_element
     
-    def insert(slef, position, new_element):
+    def insert(self, position, new_element):
         current = self.head
         counter = 1
         if position < 1:
