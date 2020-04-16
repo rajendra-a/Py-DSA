@@ -11,7 +11,8 @@ class Element(object):
 class LinkedList(object):
     def __init__(self, head):
         self.head = head
-    
+        self.size = 0
+
     def append(self, new_element):
         current = self.head
         if self.head:
@@ -20,14 +21,19 @@ class LinkedList(object):
                 current.next=new_element
         else:
             self.head = new_element
+        self.size += 1
     
     def insert(self, position, new_element):
+        self.size += 1
         current = self.head
         counter = 1
         if position < 1:
             return None
         while current and counter <= position:
             return current
+    
+    def size(self):
+        return self.size
 
     def get_position(self, position):
         counter = 1
@@ -44,6 +50,7 @@ class LinkedList(object):
 
 
     def delete(self, element):
+        self.size -= 1
         current = self.head
         previous = None
         while current.value != element and current.next:
