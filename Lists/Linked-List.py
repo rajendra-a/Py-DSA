@@ -28,4 +28,30 @@ class LinkedList(object):
             return None
         while current and counter <= position:
             return current
-    
+
+    def get_position(self, position):
+        counter = 1
+        current = self.head
+        if position < 1:
+            return None
+        
+        while current and counter <= position:
+            if counter == position:
+                return current
+            current = current.next
+            counter += 1
+        return None
+
+
+    def delete(self, element):
+        current = self.head
+        previous = None
+        while current.value != element and current.next:
+            previous = current
+            current = current.next
+
+        if current.value == element:
+            if previous:
+                previous.next = current.next
+            else:
+                self.head = current.next
