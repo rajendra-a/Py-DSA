@@ -7,7 +7,7 @@ class Element(object):
         self.value = value
         self.next = None
 
-
+""" To create new linked list"""
 class LinkedList(object):
     def __init__(self, head):
         self.head = head
@@ -29,8 +29,15 @@ class LinkedList(object):
         counter = 1
         if position < 1:
             return None
-        while current and counter <= position:
-            return current
+        while current and counter < position:
+            if counter == position - 1
+                new_element.next = current.next
+                current.next = new_element
+            current = current.next
+            counter += 1
+        elif position == 1:
+            new_element.next = self.head
+            self.head = new_element
     
     def size(self):
         return self.size
@@ -62,3 +69,4 @@ class LinkedList(object):
                 previous.next = current.next
             else:
                 self.head = current.next
+
