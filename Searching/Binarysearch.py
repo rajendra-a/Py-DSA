@@ -55,3 +55,11 @@ def binarySearch(theValues, target):
         
         # If the sequence cannot be subdivided further, we are done
     return False
+""" After computing the midpoint, the corresponding element in that position is examined.
+If the midppoint contains the target, we immediately return True. Otherwise, we determine if the 
+target is less than the item at the midpoint or greater. if it is less, we adjust the high marker to 
+be one less than the midpoint and if it is greater, we adjust the low marker to be one greater than the 
+midpoint. In the next iteration of the loop, the only portion of the sequence considered are those elements
+between the low and high markers, as adjusted. This process is repeated until the item is found or the low
+marker becomes greater than the high marker. this condition occurs when there are no items left to be
+processed, indicating the target is not in the sorted sequence."""
