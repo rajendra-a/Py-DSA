@@ -21,13 +21,14 @@ to bubble to the top or end of the list.
 # second positions are compared. if the first is larger than the second, the two cards are swapped
 
 # sorts a sequence in ascending order
-    def bubble_sort(thelist):
-        n = len(thelist)
-        # Perdform n-1 bubble operations on the sequence
-        for i in range(n-1)
-            #bubble the largest item to the end
-            for j in range(i+n-1):
-                if thelist[j] > thelist[j+1]: # swap the j and j+1 items
-                    temp = thelist[j]
-                    thelist[j] = thelist[j+1]
-                    thelist[j+1] = temp
+def bubble_sort(the_sequence):
+    n = len(the_sequence)
+    # Perdform n-1 bubble operations on the sequence
+    for i in range(n-1):
+        #bubble the largest item to the end
+        for j in range(n-1-i):  # we decreadin one pass becuase for every iteration we will get one fixed value
+            if the_sequence[j] > the_sequence[j+1]: # swap the j and j+1 items
+                the_sequence[j], the_sequence[j+1] = the_sequence[j+1], the_sequence[j]
+
+
+bubble_sort([1, 6, 3, 4, 5])
